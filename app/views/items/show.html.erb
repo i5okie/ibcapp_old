@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @item.description %>
+</p>
+
+<p>
+  <strong>Vendor:</strong>
+  <%= @item.vendor %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @item.source %>
+</p>
+
+<p>
+  <strong>Vpn:</strong>
+  <%= @item.vpn %>
+</p>
+
+<p>
+  <strong>Sku:</strong>
+  <%= @item.sku %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @item.cost %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
