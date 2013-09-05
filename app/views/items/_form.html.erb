@@ -11,35 +11,47 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="row collapse">
+    <div class="small-3 columns">
+    <%= f.file_field :photo %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="row collapse">
+    <div class="small-3 columns">
+    <%= f.label :name, class: "right inline" %></div>
+    <div class="small-9 columns"><%= f.text_field :name %></div>
   </div>
-  <div class="field">
-    <%= f.label :vendor %><br>
-    <%= f.text_field :vendor %>
+  <div class="row collapse">
+    <div class="small-3 columns">
+    <%= f.label :description, class: "right inline" %></div>
+  <div class="small-9 columns"><%= f.text_area :description %></div>
   </div>
-  <div class="field">
-    <%= f.label :source %><br>
-    <%= f.text_field :source %>
+  <div class="row collapse">
+    <div class="small-3 columns">
+    <%= f.label :vendor, class: "right inline" %></div>
+  <div class="small-9 columns"><%= f.text_field :vendor %></div>
   </div>
-  <div class="field">
-    <%= f.label :vpn %><br>
-    <%= f.text_field :vpn %>
+  <div class="row collapse">
+    <div class="small-3 columns">
+    <%= f.label :source, class: "right inline" %></div>
+  <div class="small-9 columns"><%= f.text_field :source %></div>
   </div>
-  <div class="field">
-    <%= f.label :sku %><br>
-    <%= f.text_field :sku %>
+  <div class="row collapse">
+    <div class="small-3 columns">
+    <%= f.label :vpn, class: "right inline" %></div>
+  <div class="small-9 columns"><%= f.text_field :vpn %></div>
   </div>
-  <div class="field">
-    <%= f.label :cost %><br>
-    <%= f.text_field :cost %>
+  <div class="row collapse">
+    <div class="small-3 columns">
+    <%= f.label :sku, class: "right inline" %></div>
+  <div class="small-9 columns"><%= f.text_field :sku %></div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row collapse">
+    <div class="small-3 columns">
+    <%= f.label :cost, class: "right inline" %></div>
+  <div class="small-9 columns"><%= f.text_field :cost %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-9 small-offset-3 columns"><%= f.submit %></div>
   </div>
 <% end %>

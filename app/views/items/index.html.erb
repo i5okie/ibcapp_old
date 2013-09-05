@@ -1,39 +1,24 @@
-<h1>Listing items</h1>
+
+<div class="row">
+  <div class="large-6 columns"><h4>LISTING ALL PRODUCTS</h4></div>
+  <div class="large-2 large-offset-3 columns"><%= link_to 'Add', new_item_path, class: "tiny button expand radius" %></div>
+</div>
 
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Vendor</th>
-      <th>Source</th>
-      <th>Vpn</th>
-      <th>Sku</th>
-      <th>Cost</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+ 
 
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= item.name %></td>
-        <td><%= item.description %></td>
-        <td><%= item.vendor %></td>
-        <td><%= item.source %></td>
-        <td><%= item.vpn %></td>
-        <td><%= item.sku %></td>
-        <td><%= item.cost %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td width="60px"><%= image_tag item.photo.url(:thumb)%></td>
+        <td width="300px"><%= link_to "#{item.vendor} #{item.name}", item %></td>
+        <td width="80px"><%= item.source %></td>
+        <td width="80px"><%= item.vpn %></td>
+        <td width="80px"><%= item.sku %></td>
+        <td width="80px"><%= "$ #{item.cost}" %></td>
+
+		<td><ul class="button-group radius expand"><li><%= link_to 'Edit', edit_item_path(item), class: "tiny button" %></li><li><%= link_to 'Destroy', item, class: "tiny button alert", method: :delete, data: { confirm: 'Are you sure?' } %></li></ul></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Item', new_item_path %>
