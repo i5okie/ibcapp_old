@@ -5,12 +5,12 @@ Ibcapp::Application.routes.draw do
   get '/token' => 'home#token', as: :token
   
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'items#index', as: nil
   end
 
   resources :items, only: :index
 
-  root 'home#index'
+  root :to => 'home#index', as: nil
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
