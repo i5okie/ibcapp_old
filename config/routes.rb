@@ -1,6 +1,6 @@
 Ibcapp::Application.routes.draw do
 #  get "home/index"
-  devise_for :users, :admins
+  devise_for :users
   
   get '/token' => 'home#token', as: :token
   
@@ -9,7 +9,6 @@ Ibcapp::Application.routes.draw do
   end
 
   resources :items, only: :index
-  resource :admins, only: :index
 
   root 'home#index'
   
