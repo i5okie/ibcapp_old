@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_filter :authenticate_user!
+  load_and_authorize_resource :only => :index
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items
