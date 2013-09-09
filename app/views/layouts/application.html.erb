@@ -14,39 +14,34 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   	<title><%= content_for?(:title) ? yield(:title) : "IBC App" %></title>
+	<meta name="description" content="<%= content_for?(:description) ? yield(:description) : "IBC Application" %>">
 
-  	<%= stylesheet_link_tag    "application" %>
-	<%= stylesheet_link_tag    "general_foundicons" %>
-  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+  	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" =>true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" =>true %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-	  <nav class="top-bar">
-	    <ul class="title-area">
-	      <li class="name">
-	        <h1><%= link_to "IBC App", items_path %></a></h1>
-	      </li>
-	    </ul>
-	    <section class="top-bar-section">
-	      <ul class="right">
-	        <li class="divider"></li>
-	        <li><%= link_to "Browse Products", items_path %></li>
-	        <li class="divider"></li>
-	        <li><%= link_to "Price List" %></li>
-	        <li class="divider"></li>
-	        <li><%= link_to "Contact Us" %></li>
-	        <li class="divider"></li>
-	        <li><%= link_to "Cart" %></li>
-	      </ul>
-	    </div>
-	  </nav>
-
-	  <div class="row">
-	    <%= yield %>
-	  </div>
-
-    
-    <%= javascript_include_tag "application" %>
+      <header class="navbar navbar-fixed-top">
+        <nav class="navbar-inner">
+          <div class="container">
+            <%= render 'layouts/navigation' %>
+          </div>
+        </nav>
+      </header>
+      <main role="main">
+        <div class="container">
+          <div class="content">
+             <div class="row">
+              <div class="span12">
+                <%= render 'layouts/messages' %>
+                <%= yield %>
+              </div>
+            </div>
+            <footer>
+            </footer>
+          </div>
+        </div>
+      </main>
   </body>
 </html>

@@ -1,11 +1,22 @@
 Ibcapp::Application.routes.draw do
-  resources :items
+#  get "home/index"
+  devise_for :users, :admins
+  
+  get '/token' => 'home#token', as: :token
+  
+  authenticated :user do
+    root :to => 'home#index'
+  end
 
+  resources :items, only: :index
+  resource :admins, only: :index
+
+  root 'home#index'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
