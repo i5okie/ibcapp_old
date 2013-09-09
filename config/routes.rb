@@ -9,6 +9,7 @@ Ibcapp::Application.routes.draw do
   end
 
   resources :items, only: :index
+  resources :users
 
   root :to => 'home#index'
   
